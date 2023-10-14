@@ -3,10 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lab06.ListViewGroup">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ListView x:Name="EstudiantesView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding Ciclo}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Spacing="30">
+                            <Label Text="{Binding Nombre}" FontSize="Medium" TextColor="Gold"/>
+                            <Label Text="{Binding Apellido}" FontSize="Medium" TextColor="Gold"/>
+                            <Label Text="{Binding Edad}" FontSize="Medium" TextColor="Gold"/>
+                            <Label Text="{Binding Promedio}" FontSize="Medium" TextColor="Gold"/>
+                            <Label Text="{Binding Ciclo}" FontSize="Medium" TextColor="Gold"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="AliceBlue" Orientation="Horizontal">
+                            <Label Text="Ciclo: " FontSize="Large" TextColor="Black"/>
+                            <Label Text="{Binding Ciclo}" FontSize="Large" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

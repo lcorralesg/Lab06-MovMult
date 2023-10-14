@@ -4,10 +4,12 @@ using System.Text;
 
 namespace Lab06
 {
-    public class AlumnosGroup
+    public class Estudiante
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string Ciclo { get; set; }
+        public int Edad { get; set; }
+        public double Promedio { get; set; }
+        public int Ciclo { get; set; }
     }
 }
